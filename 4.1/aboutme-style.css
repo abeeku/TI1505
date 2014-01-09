@@ -1,0 +1,32 @@
+body {
+	background-color:	grey;
+}
+
+h1, h2 {
+	color:		maroon;
+	font-family:	verdana;
+}
+
+p, ul, ol {
+	color:		white;
+}
+
+p:first-letter {
+	font-size:	1.5em;
+}
+
+b {
+	color:		maroon;
+}
+
+blockquote {
+	font-family:	monospace;
+}
+
+a {
+	text-decoration:	none;
+}
+
+a:hover {
+	text-decoration:	underline;
+}

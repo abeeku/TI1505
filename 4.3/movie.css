@@ -1,0 +1,115 @@
+body {
+	background-image:	url('http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk2-3/background.png');
+	font-size:		8pt;
+	font-family:		sans-serif;
+	margin:			0px;
+	padding:		0px;
+}
+
+#banner {
+	background-image:	url('http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk2-3/bannerbackground.png');
+	background-repeat:	repeat-x;
+}
+
+h1 {
+	font-size:		24pt;
+	font-weight:		bold;
+	text-align:		center;
+}
+
+#content {
+	width:			800px;
+	margin-left:		auto;
+	margin-right:		auto;
+	border:			4px gray solid;
+	overflow:		hidden;
+}
+
+#left {
+	width:			550px;
+	overflow:		hidden;
+}
+
+#leftheader {
+	background-image:	url('http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk2-3/rottenbackground.png');
+	background-repeat:	repeat-x;
+	color:			white;
+	overflow:		hidden;
+}
+
+#leftheader img {
+	float:			left;
+}
+
+#rating {
+	font-size:		48pt;
+	font-weight:		bold;
+	color:			red;
+}
+
+.review {
+	padding-bottom:		3em;
+}
+
+.review p:first-child {
+	font-weight:		bold;
+	background-color:	#E1D697;
+	border:			2px gray solid;
+	padding:		8px;
+	overflow:		hidden;
+}
+
+.review p:nth-child(2) {
+	overflow:		hidden;
+}
+
+.review img {
+	float:			left;
+	margin-right:		5px;
+}
+
+#right {
+	width:			250px;
+	background-color:	#A2B964;
+	float:			right;
+}
+
+#right dl {
+	margin:			10px;
+}
+
+#right dl dt {
+	font-weight:		bold;
+	margin-top:		1em;
+}
+
+#footer {
+	text-align:		center;
+	background-color:	#A2B964;
+	clear:			both;
+}
+
+#footer p {
+	padding:		5px;
+	margin:			0px;
+}
+
+#w3c {
+	float:			right;
+}
+
+.publication {
+	font-style:		italic;
+}
+
+#reviewleft {
+	float:		left;
+	width:		47%;
+	padding-left:	2%;
+}
+
+#reviewright {
+	float:		right;
+	width:		47%;
+	padding-right:	2%;
+}
