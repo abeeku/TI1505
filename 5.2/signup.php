@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<link href="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/heart.gif" type="image/gif" rel="shortcut icon" />
 		<link href="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/nerdluv.css" type="text/css" rel="stylesheet" />
+		<link href="nerdluv.css" type="text/css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -17,20 +18,20 @@
 		<form action="results.php" method="post">
 			<fieldset>
 				<legend>New User Signup:</legend>
-				<span class="column">Name:</span>		<input type="text" name="name" /><br/>
-				<span class="column">Gender:</span>		<input type="radio" name="gender" value="M">Male</input>
-										<input type="radio" name="gender" value="F">Female</input><br/>
-				<span class="column">Age:</span>		<input type="text" name="age" /><br/>
-				<span class="column">Personality type:</span>	<input type="text" name="ptype" /><br/>
-				<span class="column">Favorite OS:</span>	<select name="favos">
-											<option value="windows">Windows</option>
-											<option value="macosx">Mac OS X</option>
-											<option value="linux">Linux</option>
-											<option value="other">other</option>
-										</select><br/>
-				<span class="column">Seeking:</span>		<input type="checkbox" name="seekingm">Male</input>
-										<input type="checkbox" name="seekingf">Female</input><br/>
-				<span class="column">Between ages:</span>	<input type="text" size="5" name="minage" />and<input type="text" size="5" name="maxage" /><br/>
+				<strong>Name:</strong>			<input type="text" name="name" /><br/>
+				<strong>Gender:</strong>		<input type="radio" name="gender" value="M">Male</input>
+									<input type="radio" name="gender" value="F">Female</input><br/>
+				<strong>Age:</strong>			<input type="text" name="age" /><br/>
+				<strong>Personality type:</strong>	<input type="text" name="ptype" /><br/>
+				<strong>Favorite OS:</strong>		<select name="favos">
+										<option value="windows">Windows</option>
+										<option value="macosx">Mac OS X</option>
+										<option value="linux">Linux</option>
+										<option value="other">other</option>
+									</select><br/>
+				<strong>Seeking:</strong>		<input type="checkbox" name="seekingm">Male</input>
+									<input type="checkbox" name="seekingf">Female</input><br/>
+				<strong>Between ages:</strong>		<input type="text" size="5" name="minage" />and<input type="text" size="5" name="maxage" /><br/>
 				<input type="submit" value="Sign Up" />
 			</fieldset>
 		</form>

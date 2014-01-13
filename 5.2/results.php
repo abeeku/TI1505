@@ -6,6 +6,7 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<link href="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/heart.gif" type="image/gif" rel="shortcut icon" />
 		<link href="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/nerdluv.css" type="text/css" rel="stylesheet" />
+		<link href="nerdluv.css" type="text/css" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -17,7 +18,24 @@
 		<?php
 		$singles = file("singles.txt");
 		foreach ($singles as $single) {
-			print_r($single . "<br>");
+			$singleex = explode(',', $single);
+			// add calculation for rating
+			?>
+			<div class="match">
+				<img src="" alt="image" />
+				<p><?= $singleex[0] ?></p>
+				<ul>
+					<li><strong>gender:</strong><?= $singleex[1] ?></li>
+					<li><strong>age:</strong><?= $singleex[2] ?></li>
+					<li><strong>type:</strong><?= $singleex[3] ?></li>
+					<li><strong>OS:</strong><?= $singleex[4] ?></li>
+					<li><strong>rating:</strong><?= "temp" ?></li>
+					<!--$singleex[5] == seeking genders--!>
+					<!--$singleex[6] == min age--!>
+					<!--$singleex[7] == max age--!>
+				</ul>
+			</div>
+			<?php
 		}
 		?>
 
