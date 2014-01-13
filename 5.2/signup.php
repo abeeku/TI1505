@@ -14,31 +14,28 @@
 			where meek geeks meet
 		</div>
 
-		<div>
-			<h1>Welcome!</h1>
+		<form action="results.php" method="post">
+			<fieldset>
+				<legend>New User Signup:</legend>
+				<span class="column">Name:</span>		<input type="text" name="name" /><br/>
+				<span class="column">Gender:</span>		<input type="radio" name="gender" value="M">Male</input>
+										<input type="radio" name="gender" value="F">Female</input><br/>
+				<span class="column">Age:</span>		<input type="text" name="age" /><br/>
+				<span class="column">Personality type:</span>	<input type="text" name="ptype" /><br/>
+				<span class="column">Favorite OS:</span>	<select name="favos">
+											<option value="windows">Windows</option>
+											<option value="macosx">Mac OS X</option>
+											<option value="linux">Linux</option>
+											<option value="other">other</option>
+										</select><br/>
+				<span class="column">Seeking:</span>		<input type="checkbox" name="seekingm">Male</input>
+										<input type="checkbox" name="seekingf">Female</input><br/>
+				<span class="column">Between ages:</span>	<input type="text" size="5" name="minage" />and<input type="text" size="5" name="maxage" /><br/>
+				<input type="submit" value="Sign Up" />
+			</fieldset>
+		</form>
 
-			<ul>
-				<li>
-					<a href="signup.php">
-						<img src="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/signup.gif" alt="icon" />
-						Sign up for a new account
-					</a>
-				</li>
-		
-				<li>
-					<a href="matches.php">
-						<img src="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/heartbig.gif" alt="icon" />
-						Check your matches
-					</a>
-				</li>
-			</ul>
-		</div>
-
 		<div>
-			<p>
-				This page is for single nerds to meet and date each other!  Type in your personal information and wait for the nerdly luv to begin!  Thank you for using our site.
-			</p>
-			
 			<p>
 				Results and page (C) Copyright 2010 NerdLuv Inc.
 			</p>
