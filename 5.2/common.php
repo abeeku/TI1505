@@ -42,10 +42,10 @@ function printfooter() {
 		</div>
 
 		<div id="w3c">
-			<a href="https://webster.cs.washington.edu/validate.php">
+			<a href="http://validator.w3.org/check/referer">
 				<img src="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/w3c-xhtml.png" alt="Valid XHTML 1.1" />
 			</a>
-			<a href="https://webster.cs.washington.edu/validate-css.php">
+			<a href="http://jigsaw.w3.org/css-validator/check/referer">
 				<img src="http://www.st.ewi.tudelft.nl/~hidders/wdbt/pract/wk3-3/w3c-css.png" alt="Valid CSS" />
 			</a>
 		</div>
