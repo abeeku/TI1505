@@ -15,7 +15,7 @@
 			where meek geeks meet
 		</div>
 
-		<form action="results.php" method="post">
+		<form action="results.php" method="request">
 			<fieldset>
 				<legend>New User Signup:</legend>
 				<strong>Name:</strong>			<input type="text" name="name" /><br/>
@@ -24,10 +24,10 @@
 				<strong>Age:</strong>			<input type="text" name="age" /><br/>
 				<strong>Personality type:</strong>	<input type="text" name="ptype" /><br/>
 				<strong>Favorite OS:</strong>		<select name="favos">
-										<option value="windows">Windows</option>
-										<option value="macosx">Mac OS X</option>
-										<option value="linux">Linux</option>
-										<option value="other">other</option>
+										<option value="Windows">Windows</option>
+										<option value="Mac OS X">Mac OS X</option>
+										<option value="Linux">Linux</option>
+										<option value="Other">other</option>
 									</select><br/>
 				<strong>Seeking:</strong>		<input type="checkbox" name="seekingm">Male</input>
 									<input type="checkbox" name="seekingf">Female</input><br/>
