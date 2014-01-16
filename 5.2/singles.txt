@@ -50,3 +50,4 @@ Tyler Durden,M,46,ENFP,Mac OS X,F,20,39
 Valentina Tereshkova,F,71,ENTJ,Mac OS X,M,55,65
 Vint Cerf,M,67,ISFP,Mac OS X,F,28,55
 Yukihiro Matsumoto,M,45,ENTP,Mac OS X,F,10,25
+Gerlof Fokkema,M,25,ESTP,linux,F,0,99

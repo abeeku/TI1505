@@ -3,6 +3,14 @@ include 'common.php';
 
 printheader();
 ?>
+
+<form action="results.php" method="get">
+	<fieldset>
+		<legend>Existing User Login:</legend>
+		<strong>Name:</strong>			<input type="text" name="name" size="16" /><br/>
+	</fieldset>
+</form>
+
 <form action="results.php" method="get">
 	<fieldset>
 		<legend>New User Signup:</legend>
