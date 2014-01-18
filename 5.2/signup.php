@@ -8,6 +8,7 @@ printheader();
 	<fieldset>
 		<legend>Existing User Login:</legend>
 		<strong>Name:</strong>			<input type="text" name="name" size="16" /><br/>
+		<input type="submit" value="Log In" />
 	</fieldset>
 </form>
 
