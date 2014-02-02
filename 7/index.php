@@ -28,7 +28,7 @@
 			<label>Woonplaats</label><input type="text" id="searchWoonplaats" /><br />
 		</fieldset>
 	</div><!-- End search div-->
-
+	
 	<div id="left">
 		<div class="column" id="artikelen">
 			<ul>
@@ -36,20 +36,20 @@
 				$result = mysql_query("SELECT art, beschrijving FROM artikel;");
 				while ($row = mysql_fetch_array($result)) {
 					?>
-					<li id="a<?= $row['art'] ?>"><?= $row['art'] ?> - <?= $row['beschrijving'] ?></li>
+					<li id="a<?= $row['art'] ?>"><?= $row['art'] ?> - <span class="beschrijving"><?= $row['beschrijving'] ?></span></li>
 					<?php
 				}
 			?>
 			</ul>
 		</div><!-- End artikelen div-->
-	
+		
 		<div class="column" id="klanten">
 			<ul>
 			<?php
 				$result = mysql_query("SELECT klant, naam, woonplaats FROM klant;");
 				while ($row = mysql_fetch_array($result)) {
 					?>
-					<li id="k<?= $row['klant'] ?>"><?= $row['klant'] ?> - <?= $row['naam'] ?> - <?= $row['woonplaats'] ?></li>
+					<li id="k<?= $row['klant'] ?>"><?= $row['klant'] ?> - <span class="naam"><?= $row['naam'] ?></span> - <span class="woonpl"><?= $row['woonplaats'] ?></span></li>
 					<?php
 				}
 			?>
@@ -74,8 +74,8 @@
 		  </ul>
 		</div><!-- End verkopen div-->
 	</div><!-- End left div-->
-    
-    <div id="right">		
+	
+	<div id="right">
 		<fieldset>
 			<legend>Voeg bestelling toe</legend>
 			<div id="form">
@@ -103,11 +103,11 @@
 				<button type="button" id="submit">Voeg verkoop toe</button>
 			</div>
 		</fieldset>
-    </div><!-- End right div-->
+	</div><!-- End right div-->
     
-    <div id="footer">
-    	Powered by B&amp;B &copy;
-    </div>
+	<div id="footer">
+		Powered by B&amp;B &copy;
+	</div>
 </div><!-- End container div-->
 </body>
 </html>

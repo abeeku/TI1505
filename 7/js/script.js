@@ -13,15 +13,20 @@ window.onload = function(){
 /*This functie is called when an artikel is selected in the list*/
 function artSelect(art){
 	//highlight the selected list element
-	$$("#artikelen li").forEach(function(e) { e.removeClassName("active"); });
-	art.target.addClassName("active");
+	$$("#artikelen li.active").forEach(function(e) { e.removeClassName("active"); });
+	
+	var art = art.target;
+	if (art.tagName == "SPAN")
+	  art = art.parentNode;
+	
+	art.addClassName("active");
 	
 	//perform an Ajax request
 	new Ajax.Request(
 	  "server.php",
 	  {
 	    method: "get",
-	    parameters: { mode: "getArtikel", artikel: art.target.id.substring(1) },
+	    parameters: { mode: "getArtikel", artikel: art.id.substring(1) },
 	    onSuccess: updateFieldsArtikel,
 	    onException: ajaxFailure,
 	    onFailure: ajaxFailure
@@ -32,15 +37,20 @@ function artSelect(art){
 /*This  functieis ois called when a 'klant' is selected in the list*/
 function klantSelect(klant){
 	//highlight the selected list element
-	$$("#klanten li").forEach(function(e) { e.removeClassName("active"); });
-	klant.target.addClassName("active");
+	$$("#klanten li.active").forEach(function(e) { e.removeClassName("active"); });
+	
+	var klant = klant.target;
+	if (klant.tagName == "SPAN")
+	  klant = klant.parentNode;
+	  
+	klant.addClassName("active");
 	
 	//perform an Ajax request
 	new Ajax.Request(
 	  "server.php",
 	  {
 	    method: "get",
-	    parameters: { mode: "getKlant", klant: klant.target.id.substring(1) },
+	    parameters: { mode: "getKlant", klant: klant.id.substring(1) },
 	    onSuccess: updateFieldsKlant,
 	    onException: ajaxFailure,
 	    onFailure: ajaxFailure
@@ -90,17 +100,43 @@ function updateBedrag(event){
 	if (isNaN(bedrag))
 	  $("bedrag").innerHTML = "0.00";
 	else
-	  $("bedrag").innerHTML = bedrag;
+	  $("bedrag").innerHTML = bedrag.toFixed(2);
 }
 
 /*This function is called when an artikel is searched using the search fields */
 function updateListArtikel(event){
-
+	var searchArt = $("searchArt").value;
+	var searchBeschrijving = $("searchBeschrijving").value;
+	
+	$$("#artikelen li").forEach(function(e) {
+	  var art = e.id.substring(1);
+	  var beschrijving = e.getElementsByClassName("beschrijving")[0].innerHTML;
+	  
+	  if (beschrijving.indexOf(searchBeschrijving) == -1 || art.indexOf(searchArt) == -1)
+	    e.style.display = "none";
+	  else
+	    e.style.display = "";
+	});
 }
 
 /*This function is called when a klant is searched using the search fields*/
 function updateListKlant(event){
-
+	var searchKlant = $("searchKlant").value;
+	var searchNaam = $("searchNaam").value;
+	var searchWoonpl = $("searchWoonplaats").value;
+	
+	$$("#klanten li").forEach(function(e) {
+	  var klant = e.id.substring(1);
+	  var naam = e.getElementsByClassName("naam")[0].innerHTML;
+	  var woonpl = e.getElementsByClassName("woonpl")[0].innerHTML;
+	  
+	  if (klant.indexOf(searchKlant) == -1
+	      || naam.indexOf(searchNaam) == -1
+	      || woonpl.indexOf(searchWoonpl) == -1)
+	    e.style.display = "none";
+	  else
+	    e.style.display = "";
+	});
 }
 
 
@@ -108,7 +144,26 @@ function updateListKlant(event){
 This function performs a Ajax request that connects with server.php where a sale is added
 */
 function saveAankoop(){
+	var art = $("art").innerHTML;
+	//var afd = $("afd").
+	var hoeveelheid = parseInt($("hoeveelheid").value);
 	
+	
+	var klant = $("klant").innerHTML;
+	var voorraad = parseInt($("voorraad").value);
+	
+	
+	//perform an Ajax request
+	new Ajax.Request(
+	  "server.php",
+	  {
+	    method: "get",
+	    parameters: { mode: "getKlant", klant: klant.target.id.substring(1) },
+	    onSuccess: updateFieldsKlant,
+	    onException: ajaxFailure,
+	    onFailure: ajaxFailure
+	  }
+	);
 }
 
 /*When a sale is done, update the list of 'verkopen', using Scriptaculous!!!*/

@@ -25,7 +25,9 @@ else if (isset($_REQUEST['mode']) && $_REQUEST['mode']=='getKlant'){
 
 
 else if(isset($_REQUEST['mode']) && $_REQUEST['mode']=='saveAankoop'){
-	//Save a purchase to the database
+	$sql = "INSERT INTO verkoop
+		(art, afd, hoeveelheid, bedrag, klant, datum, aanbet)
+		VALUES (" . ");";
 }
 
 ?>
