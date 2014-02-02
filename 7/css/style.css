@@ -57,9 +57,8 @@ body{
 	padding-right: 10px;
 }
 
-/*TODO: Add CSS code (including the CSS selector!) for when an item is selected*/
-.column li .active {
-	
+.column li.active {
+	background-color: #f8cdff;
 }
 
 #verkopen{

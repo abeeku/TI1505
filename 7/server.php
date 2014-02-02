@@ -15,7 +15,12 @@ if (isset($_REQUEST['mode']) && $_REQUEST['mode']=='getArtikel'){
 }
 
 else if (isset($_REQUEST['mode']) && $_REQUEST['mode']=='getKlant'){
-	//Request all the information from an customer
+	$klant = $_REQUEST['klant'];
+	
+	$result = mysql_query("SELECT * FROM klant WHERE klant = " . $klant . ";");
+	if ($klantrow = mysql_fetch_array($result, MYSQL_NUM)) {
+		print implode(';', $klantrow);
+	}
 }
 
 
