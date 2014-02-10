@@ -64,7 +64,7 @@
 							FROM verkoop
 							JOIN artikel ON verkoop.art = artikel.art
 							JOIN klant ON verkoop.klant = klant.klant
-							WHERE datum = \"2003-01-31\";");
+							WHERE datum = \"" . DATE("Y-m-d") . "\";");
 				while ($row = mysql_fetch_array($result)) {
 					?>
 					<li><?= $row['art'] ?> - <?= $row['beschrijving'] ?> - <?= $row['naam'] ?></li>

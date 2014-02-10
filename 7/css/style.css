@@ -62,15 +62,15 @@ body{
 }
 
 #verkopen{
+	height: 230px;
 	border: 1px solid white;
+	overflow: auto;
 	clear: both;
 }
 
 #verkopen ul{
-	height: 230px;
 	width: 237px;
 	list-style-type: none;
-	overflow: auto;
 }
 
 #right{

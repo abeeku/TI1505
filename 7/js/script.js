@@ -144,22 +144,42 @@ function updateListKlant(event){
 This function performs a Ajax request that connects with server.php where a sale is added
 */
 function saveAankoop(){
-	var art = $("art").innerHTML;
-	//var afd = $("afd").
+	var art = parseInt($("art").innerHTML);
+	var afd = $("afd").options[$("afd").selectedIndex].text;
+	
 	var hoeveelheid = parseInt($("hoeveelheid").value);
+	if (isNaN(hoeveelheid)) {
+	  alert("hoeveelheid niet juist ingevuld");
+	  return;
+	}
 	
+	var bedrag = parseFloat($("bedrag").innerHTML);
+	var klant = parseInt($("klant").innerHTML);
 	
-	var klant = $("klant").innerHTML;
-	var voorraad = parseInt($("voorraad").value);
-	
-	
+	var aanbet = $("aanbet").value;
+	if (aanbet == "") {
+	  aanbet = 0;
+	} else {
+	  aanbet = parseFloat(aanbet);
+	  if (isNaN(aanbet)) {
+	    alert("aanbetaling niet juist ingevuld");
+	    return;
+	  }
+	}
+	  
 	//perform an Ajax request
 	new Ajax.Request(
 	  "server.php",
 	  {
 	    method: "get",
-	    parameters: { mode: "getKlant", klant: klant.target.id.substring(1) },
-	    onSuccess: updateFieldsKlant,
+	    parameters: { mode: "saveAankoop",
+			  art: art,
+			  afd: afd,
+			  hoeveelheid: hoeveelheid,
+			  bedrag: bedrag,
+			  klant: klant,
+			  aanbet: aanbet },
+	    onSuccess: updateVerkopen,
 	    onException: ajaxFailure,
 	    onFailure: ajaxFailure
 	  }
@@ -168,7 +188,9 @@ function saveAankoop(){
 
 /*When a sale is done, update the list of 'verkopen', using Scriptaculous!!!*/
 function updateVerkopen(ajax){
-
+	var item = document.createElement('li');
+	item.innerHTML = $("art").innerHTML + " - " + $("beschrijving").value + " - " + $("naam").value;
+	$("verkooplist").appendChild(item);
 }
 
 function transformIntoArray(accessoriesString) {
